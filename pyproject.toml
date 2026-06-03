@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pexels-python"
+version = "1.0.0"
+authors = [
+    { name = "Pourya Mohamadi", email = "fresh.pourya@gmail.com" }
+]
+description = "A production-ready Python wrapper for the Pexels REST API featuring robust Pydantic input validation."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+dependencies = [
+    "requests>=2.28.0",
+    "pydantic>=2.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/pexels-api-wrapper"
+Issues = "https://github.com/yourusername/pexels-api-wrapper/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
