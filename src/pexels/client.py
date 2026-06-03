@@ -70,12 +70,12 @@ class Client:
     """
 
     def __init__(self, api_key: str):
-        self.api_key = api_key
+        self._api_key = api_key
 
         # Authorization: the Pexels API expects the raw API key in the
         # Authorization header — no "Bearer" prefix is used.
         # Reference: https://www.pexels.com/api/documentation/#authorization
-        self.headers = {
+        self._headers = {
             "Authorization": self.api_key,
             "Accept": "application/json",
         }
@@ -83,8 +83,8 @@ class Client:
         # Base URLs as defined in the Pexels API documentation.
         # Note: the legacy https://api.pexels.com/videos/ is deprecated;
         # use /v1/videos/ for all video requests.
-        self.video_end_point = "https://api.pexels.com/v1/videos/"
-        self.picture_end_point = "https://api.pexels.com/v1/"
+        self._video_end_point = "https://api.pexels.com/v1/videos/"
+        self._picture_end_point = "https://api.pexels.com/v1/"
 
     # ------------------------------------------------------------------
     # Photo endpoints
