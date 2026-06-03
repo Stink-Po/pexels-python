@@ -11,6 +11,8 @@ authors = [
 description = "A production-ready Python wrapper for the Pexels REST API featuring robust Pydantic input validation."
 readme = "README.md"
 requires-python = ">=3.9"
+license = "MIT"
+keywords = ["pexels", "api", "wrapper", "pydantic", "photos", "videos"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -24,8 +26,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/pexels-api-wrapper"
-Issues = "https://github.com/yourusername/pexels-api-wrapper/issues"
+Homepage = "https://github.com/Stink-Po/pexels-python"
+Issues = "https://github.com/Stink-Po/pexels-python/issues"
+
 
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+packages = ["src/pexels"]
