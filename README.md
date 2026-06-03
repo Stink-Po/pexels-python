@@ -60,8 +60,8 @@ per_page=10
 )
 
 for photo in search_results["photos"]:
-print(photo["photographer"])
-print(photo["src"]["original"])
+    print(photo["photographer"])
+    print(photo["src"]["original"])
 ```
 
 
@@ -72,7 +72,7 @@ Retrieve curated photos from the Pexels curated feed.
 curated = client.curated_photos(page=1, per_page=10)
 
 for photo in curated["photos"]:
-print(photo["photographer"])
+    print(photo["photographer"])
 ```
 
 
@@ -100,7 +100,7 @@ per_page=10
 )
 
 for video in videos["videos"]:
-print(video["user"]["name"])
+    print(video["user"]["name"])
 ```
 
 ### Popular Videos
@@ -117,7 +117,7 @@ per_page=10
 )
 
 for video in popular["videos"]:
-print(video["id"])
+    print(video["id"])
 ```
 
 
@@ -139,7 +139,7 @@ Get a list of featured collections.
 featured = client.featured_collections(page=1, per_page=10)
 
 for collection in featured["collections"]:
-print(collection["title"])
+    print(collection["title"])
 ```
 
 
@@ -151,7 +151,7 @@ Retrieve the authenticated user’s collections.
 collections = client.my_collections(page=1, per_page=10)
 
 for collection in collections["collections"]:
-print(collection["title"])
+    print(collection["title"])
 ```
 
 Collection Media
@@ -188,9 +188,9 @@ Examples of validation-covered parameters include:
 from pydantic import ValidationError
 
 try:
-client.search_photos(query="city", page=-1)
+    client.search_photos(query="city", page=-1)
 except ValidationError as e:
-print(f"Validation error: {e}")
+    print(f"Validation error: {e}")
 ```
 
 Error Handling
@@ -207,9 +207,9 @@ This gives you a cleaner and more predictable error-handling flow.
 from pexels.exceptions import PexelsAPIError
 
 try:
-client.search_photos(query="ocean")
+    client.search_photos(query="ocean")
 except PexelsAPIError as e:
-print(f"API Error ({e.status_code}): {e.message}")
+    print(f"API Error ({e.status_code}): {e.message}")
 ```
 
 Rate Limiting
