@@ -4,6 +4,12 @@
 [![Python Versions](https://img.shields.io/pypi/pyversions/pexels-api.svg)](https://pypi.org/project/pexels-api/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+> Disclaimer
+>
+> This project is an independent, community-maintained Python wrapper for the Pexels API.
+> It is not affiliated with, endorsed by, or maintained by Pexels.
+>
+> 
 An elegant, developer-friendly Python client library for interacting seamlessly with the **Pexels REST API**.
 
 Unlike naive wrappers, this package uses **Pydantic v2** to perform robust client-side validation on your parameters
