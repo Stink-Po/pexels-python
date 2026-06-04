@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pexels-sdk"
-version = "1.1.1"
+version = "1.1.2"
 authors = [
     { name = "Pourya Mohamadi", email = "fresh.pourya@gmail.com" }
 ]

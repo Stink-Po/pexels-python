@@ -13,7 +13,7 @@ Pexels API base URLs
 Photos  : https://api.pexels.com/v1/
 Videos  : https://api.pexels.com/v1/videos/
 
-.. note::
+. note::
     The legacy ``https://api.pexels.com/videos/`` base URL is deprecated
     by Pexels.  All video requests use the ``/v1/videos/`` path.
 
@@ -59,13 +59,13 @@ class Client:
 
     Attributes
     ----------
-    api_key : str
+    _api_key : str
         The stored API key.
-    headers : dict
+    _headers : dict
         Default HTTP headers sent with every request.
-    video_end_point : str
+    _video_end_point : str
         Base URL for all video endpoints.
-    picture_end_point : str
+    _picture_end_point : str
         Base URL for all photo and collection endpoints.
     """
 
@@ -155,8 +155,8 @@ class Client:
             # included in the query string.
             params_dict = validated_params.model_dump(exclude_none=True)
 
-            api_url = self.picture_end_point + "search"
-            results = requests.get(api_url, headers=self.headers, params=params_dict)
+            api_url = self._picture_end_point + "search"
+            results = requests.get(api_url, headers=self._headers, params=params_dict)
             return ResponseAnalyzer(results).analyze()
 
         except Exception as e:
@@ -205,10 +205,10 @@ class Client:
         # BUG FIX: removed incorrect use of pydantic.Field() as function
         # parameter defaults.  Plain integer defaults are sufficient; the
         # API will reject out-of-range values with a 400 response anyway.
-        api_url = self.picture_end_point + "curated"
+        api_url = self._picture_end_point + "curated"
         results = requests.get(
             api_url,
-            headers=self.headers,
+            headers=self._headers,
             params={"per_page": per_page, "page": page},
         )
         response = ResponseAnalyzer(results).analyze()
@@ -248,8 +248,8 @@ class Client:
         """
         # BUG FIX: was f"photos/:{photo_id}" — the colon is NOT part of the
         # actual URL path.  The correct endpoint is /v1/photos/{photo_id}.
-        api_url = self.picture_end_point + f"photos/{photo_id}"
-        results = requests.get(api_url, headers=self.headers)
+        api_url = self._picture_end_point + f"photos/{photo_id}"
+        results = requests.get(api_url, headers=self._headers)
         response = ResponseAnalyzer(results).analyze()
         if response:
             return response
@@ -290,7 +290,7 @@ class Client:
             Minimum video size. Accepted: ``large`` (4K), ``medium``
             (Full HD), ``small`` (HD).
         locale : str, optional
-            Locale used to localise the search results.
+            Locale used to localize the search results.
         page : int, optional
             Page number to return. Must be ≥ 1. Default ``1``.
         per_page : int, optional
@@ -327,8 +327,8 @@ class Client:
             )
             params_dict = validated_params.model_dump(exclude_none=True)
 
-            api_url = self.video_end_point + "search"
-            results = requests.get(api_url, headers=self.headers, params=params_dict)
+            api_url = self._video_end_point + "search"
+            results = requests.get(api_url, headers=self._headers, params=params_dict)
             return ResponseAnalyzer(results).analyze()
 
         except Exception as e:
@@ -383,8 +383,8 @@ class Client:
             )
             params_dict = validated_params.model_dump(exclude_none=True)
 
-            api_url = self.video_end_point + "popular"
-            results = requests.get(api_url, headers=self.headers, params=params_dict)
+            api_url = self._video_end_point + "popular"
+            results = requests.get(api_url, headers=self._headers, params=params_dict)
             return ResponseAnalyzer(results).analyze()
 
         except Exception as e:
@@ -427,8 +427,8 @@ class Client:
         # BUG FIX: the ID must be part of the URL path, not a query param.
         # video_end_point = "https://api.pexels.com/v1/videos/"
         # so this produces "https://api.pexels.com/v1/videos/{video_id}"
-        api_url = self.video_end_point + str(video_id)
-        results = requests.get(api_url, headers=self.headers)
+        api_url = self._video_end_point + str(video_id)
+        results = requests.get(api_url, headers=self._headers)
         response = ResponseAnalyzer(results).analyze()
         if response:
             return response
@@ -469,10 +469,10 @@ class Client:
         BUG FIX: Removed incorrect use of ``pydantic.Field()`` as function
         parameter defaults (same issue as :meth:`curated_photos`).
         """
-        api_url = self.picture_end_point + "collections/featured"
+        api_url = self._picture_end_point + "collections/featured"
         results = requests.get(
             api_url,
-            headers=self.headers,
+            headers=self._headers,
             params={"page": page, "per_page": per_page},
         )
         response = ResponseAnalyzer(results).analyze()
@@ -514,10 +514,10 @@ class Client:
         BUG FIX: Removed incorrect use of ``pydantic.Field()`` as function
         parameter defaults.
         """
-        api_url = self.picture_end_point + "collections"
+        api_url = self._picture_end_point + "collections"
         results = requests.get(
             api_url,
-            headers=self.headers,
+            headers=self._headers,
             params={"page": page, "per_page": per_page},
         )
         response = ResponseAnalyzer(results).analyze()
@@ -589,8 +589,8 @@ class Client:
             )
             params_dict = validated_params.model_dump(exclude_none=True)
 
-            api_url = self.picture_end_point + path
-            results = requests.get(api_url, headers=self.headers, params=params_dict)
+            api_url = self._picture_end_point + path
+            results = requests.get(api_url, headers=self._headers, params=params_dict)
             return ResponseAnalyzer(results).analyze()
 
         except Exception as e:
