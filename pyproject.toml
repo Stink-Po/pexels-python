@@ -32,3 +32,6 @@ Issues = "https://github.com/Stink-Po/pexels-python/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pexels"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/pexels"]
