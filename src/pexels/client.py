@@ -76,7 +76,7 @@ class Client:
         # Authorization header — no "Bearer" prefix is used.
         # Reference: https://www.pexels.com/api/documentation/#authorization
         self._headers = {
-            "Authorization": self.api_key,
+            "Authorization": self._api_key,
             "Accept": "application/json",
         }
 
