@@ -1,7 +1,7 @@
 # Pexels API Python Wrapper
 
-[![PyPI version](https://img.shields.io/pypi/v/pexels-api.svg)](https://pypi.org/project/pexels-api/)
-[![Python Versions](https://img.shields.io/pypi/pyversions/pexels-api.svg)](https://pypi.org/project/pexels-api/)
+[![PyPI version](https://img.shields.io/pypi/v/pexels-sdk.svg)](https://pypi.org/project/pexels-sdk/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/pexels-sdk.svg)](https://pypi.org/project/pexels-sdk/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > Disclaimer
@@ -34,7 +34,7 @@ Unlike naive wrappers, this package uses **Pydantic v2** to perform robust clien
 Install the package via `pip`:
 
 ```bash
-pip install pexels-api
+pip install pexels-sdk
 ```
 
 ## Quick Start

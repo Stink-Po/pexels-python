@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pexels-python"
+name = "pexels-sdk"
 version = "1.0.0"
 authors = [
     { name = "Pourya Mohamadi", email = "fresh.pourya@gmail.com" }
