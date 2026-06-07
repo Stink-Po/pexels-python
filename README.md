@@ -3,6 +3,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/pexels-sdk.svg)](https://pypi.org/project/pexels-sdk/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/pexels-sdk.svg)](https://pypi.org/project/pexels-sdk/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://static.pepy.tech/badge/pexels-sdk)](https://pepy.tech/project/pexels-sdk)
 
 > Disclaimer
 >
